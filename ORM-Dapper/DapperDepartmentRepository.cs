@@ -17,6 +17,8 @@ namespace ORM_Dapper
             _conn = conn;
         }
 
+     
+
         public IEnumerable<Department> GetAllDepartments()
         {
             return _conn.Query<Department>("SELECT * FROM departments");
@@ -27,5 +29,7 @@ namespace ORM_Dapper
             _conn.Execute("INSERT INTO departments (Name) VALUES (@name)",
                 new {name});
         }
+
+
     }
 }
