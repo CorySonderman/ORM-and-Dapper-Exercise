@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ORM_Dapper
 {
@@ -28,6 +29,12 @@ namespace ORM_Dapper
         {
             _conn.Execute("INSERT INTO departments (Name) VALUES (@name)",
                 new {name});
+        }
+
+        public void DeleteDepartment(int id) 
+        {
+            _conn.Execute("DELET FROM departments WHERE DepartmentID = @id", new {id});
+                   
         }
 
 
